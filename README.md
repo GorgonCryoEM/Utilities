@@ -1,2 +1,4 @@
 # Utilities
-Tools, scripts, packages not used directly in Gorgon
+Packages not used directly in Gorgon
+
+May be used to keep tools, scripts, packages
