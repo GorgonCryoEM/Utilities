@@ -2,6 +2,8 @@
 
 while read line; do
     f=$line
+files=( `git ls-tree -r --name-only HEAD | xargs grep -l "CVS Meta Information"` )
+
     f_temp=${f}_temp
     echo $f
     awk '
