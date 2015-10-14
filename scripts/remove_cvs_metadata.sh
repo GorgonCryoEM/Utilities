@@ -1,9 +1,8 @@
 #!/bin/bash
 
-while read line; do
-    f=$line
 files=( `git ls-tree -r --name-only HEAD | xargs grep -l "CVS Meta Information"` )
 
+for f in ${files[@]}; do
     f_temp=${f}_temp
     echo $f
     awk '
@@ -15,4 +14,4 @@ files=( `git ls-tree -r --name-only HEAD | xargs grep -l "CVS Meta Information"`
     ' $f > $f_temp
     cat $f_temp > $f
     rm $f_temp
-done < cvs_meta_info.list
+done
